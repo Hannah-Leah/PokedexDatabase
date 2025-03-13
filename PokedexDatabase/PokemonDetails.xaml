@@ -1,0 +1,48 @@
+﻿<Window x:Class="PokedexDatabase.PokemonDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokedexDatabase"
+        mc:Ignorable="d"
+        Title="PokemonDetails" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <!-- Existing ListView for Attacks -->
+        <ListView x:Name="AttackListView" HorizontalAlignment="Left" Height="274" VerticalAlignment="Top" Width="248" Margin="47,112,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="AttackID" DisplayMemberBinding="{Binding AttackID}" />
+                    <GridViewColumn Header="Attack Title" DisplayMemberBinding="{Binding AttTitel}" />
+                    <GridViewColumn Header="Attack Description" DisplayMemberBinding="{Binding AttDescription}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- New ListView for Types -->
+        <ListView x:Name="TypeListView" HorizontalAlignment="Left" Height="274" VerticalAlignment="Top" Width="140" Margin="340,112,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="TypeID" DisplayMemberBinding="{Binding TypeIDPK}" />
+                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding TypeDescription}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- Region ListView -->
+        <ListView x:Name="RegionListView" Margin="537,117,37,48" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="RegionID" DisplayMemberBinding="{Binding RegIDPK}" />
+                    <GridViewColumn Header="Region Name" DisplayMemberBinding="{Binding RegDesignation}" />
+                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding RegDescription}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Attacks" HorizontalAlignment="Left" Margin="117,78,0,0" VerticalAlignment="Top" Height="32" Width="82" Foreground="#FF530000" FontSize="20" FontFamily="Berlin Sans FB"/>
+        <Label Content="Pokemon Type&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,76,0,0" VerticalAlignment="Top" Foreground="#FF006A5F" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="20" Height="36"/>
+        <Label Content="Pokemon Region " HorizontalAlignment="Left" Margin="557,79,0,0" VerticalAlignment="Top" Foreground="#FF2C0D75" FontFamily="Cooper Black" FontSize="20"/>
+        <Image HorizontalAlignment="Left" Height="68" Margin="117,10,0,0" VerticalAlignment="Top" Width="83" Source="https://cdn-icons-png.flaticon.com/512/8193/8193165.png"/>
+        <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Source="https://img.rankedboost.com/wp-content/plugins/pokemon-sword-shield/assets/pokemon-images-regular/Eevee.png"/>
+        <Image HorizontalAlignment="Left" Height="86" Margin="613,7,0,0" VerticalAlignment="Top" Width="74" Source="https://png.pngtree.com/png-clipart/20241121/original/pngtree-old-map-png-image_17275779.png"/>
+    </Grid>
+</Window>

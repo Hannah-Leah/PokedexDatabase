@@ -1,0 +1,70 @@
+﻿<Window x:Class="PokedexDatabase.CreatePokemon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokedexDatabase"
+        mc:Ignorable="d"
+        Title="CreatePokemon" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+
+        <!--Textboxes and labels-->
+
+        <Label Content="PokDexID" HorizontalAlignment="Left" Margin="120,41,0,0" VerticalAlignment="Top" Foreground="#FF410202" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="PokName" HorizontalAlignment="Left" Margin="120,72,0,0" VerticalAlignment="Top" Foreground="#FF4A4000" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="PokDescription" HorizontalAlignment="Left" Margin="106,103,0,0" VerticalAlignment="Top" Foreground="#FF2C3C00" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="PokSize" HorizontalAlignment="Left" Margin="125,134,0,0" VerticalAlignment="Top" Foreground="#FF004244" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="PokWeight" HorizontalAlignment="Left" Margin="120,165,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Foreground="#FF001E4D" FontWeight="Bold" FontStyle="Italic"/>
+        <TextBox x:Name="TextBox_PokDexID" Text="{Binding PokDexID}" HorizontalAlignment="Left" Margin="203,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding PokName}" HorizontalAlignment="Left" Margin="203,76,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding PokDescription}"  HorizontalAlignment="Left" Margin="203,108,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="TextBox_PokSize" Text="{Binding PokSize}" HorizontalAlignment="Left" Margin="203,138,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="TextBox_PokWeight" Text="{Binding PokWeight}" HorizontalAlignment="Left" Margin="203,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"  Grid.RowSpan="2"/>
+        <Button x:Name="BtnCreatePokemon" Content="Create&#xD;&#xA;" HorizontalAlignment="Left" Margin="226,361,0,0" VerticalAlignment="Top" Height="46" Width="218" Click="BtnCreatePokemon_Click" Background="#FFDBFAFF" FontSize="18" FontWeight="Bold" FontFamily="Amiri"/>
+
+        <!--Attack list box-->
+
+        <ListBox x:Name="LstAttacks"
+         SelectionMode="Multiple"
+         DisplayMemberPath="AttTitel"
+         ItemsSource="{Binding AttacksObsv}" Margin="203,232,438,90" />
+
+
+        <!--Region combobox-->
+
+        <ComboBox x:Name="ComboBox_Region" 
+          HorizontalAlignment="Left" Margin="203,201,0,0" 
+          VerticalAlignment="Top" Width="120"
+          ItemsSource="{Binding RegionsObsv}" 
+          DisplayMemberPath="RegDesignation"
+          SelectedValuePath="RegIDPK"
+          SelectedValue="{Binding SelectedRegionID, Mode=TwoWay}">
+        </ComboBox>
+        <Label Content="Type&#xD;&#xA;" HorizontalAlignment="Left" Margin="445,50,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="20" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Attacks&#xA;" HorizontalAlignment="Left" Margin="127,232,0,0" VerticalAlignment="Top" Foreground="#FF56003E" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Region&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="125,201,0,0" VerticalAlignment="Top" Foreground="#FF25024A" FontWeight="Bold" FontStyle="Italic"/>
+
+        <!--ListBox for the Types-->
+
+        <ListBox x:Name="ListBox_Type" SelectionMode="Multiple" ItemsSource="{Binding TypesObsv}"  Margin="411,94,239,90">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding TypeDescription }" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Image HorizontalAlignment="Left" Height="285" Margin="599,292,0,0" VerticalAlignment="Top" Width="179" RenderTransformOrigin="0.5,0.5" Source="https://www.pngmart.com/files/2/Legendary-Pokemon-Transparent-Background.png">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="10.134"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+    </Grid>
+</Window>
