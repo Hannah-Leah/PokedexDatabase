@@ -4,6 +4,286 @@
              xmlns:local="clr-namespace:PokedexDatabase"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+<!--Purple Template-->
+        <LinearGradientBrush x:Key="SubtlePurple" EndPoint="0.476,0.09" StartPoint="0.476,1.363">
+            <GradientStop Color="#ffc3bfff" Offset="0.013"/>
+            <GradientStop Color="#ffd2d0f7" Offset="1"/>
+            <GradientStop Color="#ffdedcfa" Offset="0.54"/>
+            <GradientStop Color="#ffeae8fa" Offset="0.46"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="PurpleBorder" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#ff282647"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+
+        <Style x:Key="HeaderPurple" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="{StaticResource SubtlePurple}"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Purple"/>
+        </Style>
+
+        <DataTemplate x:Key="PurpleHeaderTemplate">
+            <Grid>
+                <Border Style="{StaticResource PurpleBorder}">
+                    <TextBlock Text="ID" Style="{StaticResource HeaderPurple}" />
+                </Border>
+            </Grid>
+        </DataTemplate>
+
+        <!--Pink Template-->
+        <LinearGradientBrush x:Key="SubtlePink" EndPoint="0.476,0.09" StartPoint="0.476,1.363">
+            <GradientStop Color="#fffcc2ff" Offset="0.013"/>
+            <GradientStop Color="#fffdcfff" Offset="1"/>
+            <GradientStop Color="#fffbd7fc" Offset="0.54"/>
+            <GradientStop Color="#fffbe6fc" Offset="0.46"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="PinkBorder" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#ffcfabd1"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+
+        <Style x:Key="HeaderPink" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="{StaticResource SubtlePink}"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="HotPink"/>
+        </Style>
+
+        <DataTemplate x:Key="PinkHeaderTemplate">
+            <Grid>
+                <Border Style="{StaticResource PinkBorder}">
+                    <TextBlock Text="PokDexID" Style="{StaticResource HeaderPink}" />
+                </Border>
+            </Grid>
+        </DataTemplate>
+
+        <!--Yellow Template-->
+        <LinearGradientBrush x:Key="SubtleYellow" EndPoint="0.476,0.09" StartPoint="0.476,1.363">
+            <GradientStop Color="#ffe6e4a5" Offset="0.013"/>
+            <GradientStop Color="#ffe6e4ae" Offset="1"/>
+            <GradientStop Color="#ffe6e4ba" Offset="0.54"/>
+            <GradientStop Color="#ffebeace" Offset="0.46"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="YellowBorder" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#ffb5b48b"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+
+        <Style x:Key="HeaderYellow" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="{StaticResource SubtleYellow}"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#a6a351"/>
+        </Style>
+
+        <DataTemplate x:Key="YellowHeaderTemplate">
+            <Grid>
+                <Border Style="{StaticResource YellowBorder}">
+                    <TextBlock Text="Name" Style="{StaticResource HeaderYellow}" />
+                </Border>
+            </Grid>
+        </DataTemplate>
+
+        <!--Blue Template-->
+        <LinearGradientBrush x:Key="SubtleBlue" EndPoint="0.476,0.09" StartPoint="0.476,1.363">
+            <GradientStop Color="#b4ddfa" Offset="0.013"/>
+            <GradientStop Color="#c0e3fc" Offset="1"/>
+            <GradientStop Color="#cae6fa" Offset="0.54"/>
+            <GradientStop Color="#d7ebfa" Offset="0.46"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="BlueBorder" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#6c8ba1"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+
+        <Style x:Key="HeaderBlue" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="{StaticResource SubtleBlue}"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="CornflowerBlue"/>
+        </Style>
+
+        <DataTemplate x:Key="BlueHeaderTemplate">
+            <Grid>
+                <Border Style="{StaticResource BlueBorder}">
+                    <TextBlock Text="Description" Style="{StaticResource HeaderBlue}" />
+                </Border>
+            </Grid>
+        </DataTemplate>
+
+        <!--Green Template-->
+        <LinearGradientBrush x:Key="SubtleGreen" EndPoint="0.476,0.09" StartPoint="0.476,1.363">
+            <GradientStop Color="#d6ffc9" Offset="0.013"/>
+            <GradientStop Color="#dafccf" Offset="1"/>
+            <GradientStop Color="#dbfad2" Offset="0.54"/>
+            <GradientStop Color="#e3fadc" Offset="0.46"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="GreenBorder" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#a3ba9c"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+
+        <Style x:Key="HeaderGreen" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="{StaticResource SubtleGreen}"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Green"/>
+        </Style>
+
+        <DataTemplate x:Key="GreenHeaderTemplate">
+            <Grid>
+                <Border Style="{StaticResource GreenBorder}">
+                    <TextBlock Text="Size" Style="{StaticResource HeaderGreen}" />
+                </Border>
+            </Grid>
+        </DataTemplate>
+
+        <!--Orange Template-->
+        <LinearGradientBrush x:Key="SubtleOrange" EndPoint="0.476,0.09" StartPoint="0.476,1.363">
+            <GradientStop Color="#fae8c8" Offset="0.013"/>
+            <GradientStop Color="#faebcf" Offset="1"/>
+            <GradientStop Color="#faeed7" Offset="0.54"/>
+            <GradientStop Color="#f7f0e1" Offset="0.46"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="OrangeBorder" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#d1bc94"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+
+        <Style x:Key="HeaderOrange" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="{StaticResource SubtleOrange}"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="Coral"/>
+        </Style>
+
+        <DataTemplate x:Key="OrangeHeaderTemplate">
+            <Grid>
+                <Border Style="{StaticResource OrangeBorder}">
+                    <TextBlock Text="Weight" Style="{StaticResource HeaderOrange}" />
+                </Border>
+            </Grid>
+        </DataTemplate>
+
+        <!--Red Template-->
+        <LinearGradientBrush x:Key="SubtleRed" EndPoint="0.476,0.09" StartPoint="0.476,1.363">
+            <GradientStop Color="#fa7e78" Offset="0.013"/>
+            <GradientStop Color="#fa8882" Offset="1"/>
+            <GradientStop Color="#f78e88" Offset="0.54"/>
+            <GradientStop Color="#fa9993" Offset="0.46"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="RedBorder" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#b8433d"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+
+        <Style x:Key="HeaderRed" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="{StaticResource SubtleRed}"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="DarkRed"/>
+        </Style>
+
+        <DataTemplate x:Key="RedHeaderTemplate">
+            <Grid>
+                <Border Style="{StaticResource RedBorder}">
+                    <TextBlock Text="PokRegIDFK" Style="{StaticResource HeaderRed}" />
+                </Border>
+            </Grid>
+        </DataTemplate>
+
+        <!--ID cell-->
+
+        <DataTemplate x:Key="IDCellTemplate">
+            <Grid Width="100">
+                <TextBlock Foreground="Purple" FontSize="18"  HorizontalAlignment="Center" Text="{Binding PokIDPK}"/>
+            </Grid>
+        </DataTemplate>
+
+        <!--PokName cell-->
+
+        <DataTemplate x:Key="PokNameCellTemplate">
+            <Grid Width="100">
+                <TextBlock Foreground="#9c9a5d" FontSize="18" HorizontalAlignment="Center" Text="{Binding PokName}"/>
+            </Grid>
+        </DataTemplate>
+
+        <!--PokIdDex cell-->
+
+        <DataTemplate x:Key="PokDexIDCellTemplate">
+            <Grid Width="100">
+                <TextBlock Foreground="DeepPink" FontSize="18"  HorizontalAlignment="Center" Text="{Binding PokDexID}"/>
+            </Grid>
+        </DataTemplate>
+
+        <!--Description cell-->
+
+        <DataTemplate x:Key="PokDescriptionCellTemplate">
+            <Grid Width="100">
+                <TextBlock Foreground="DarkBlue" FontSize="18"  HorizontalAlignment="Center" Text="{Binding PokDescription}"/>
+            </Grid>
+        </DataTemplate>
+
+        <!--PokSize cell-->
+
+        <DataTemplate x:Key="PokSizeCellTemplate">
+            <Grid Width="100">
+                <TextBlock Foreground="DarkGreen" FontSize="18"  HorizontalAlignment="Center" Text="{Binding PokSize}"/>
+            </Grid>
+        </DataTemplate>
+
+        <!--PokWeight cell-->
+
+        <DataTemplate x:Key="PokWeightCellTemplate">
+            <Grid Width="100">
+                <TextBlock Foreground="Orange" FontSize="18"  HorizontalAlignment="Center" Text="{Binding PokWeight}"/>
+            </Grid>
+        </DataTemplate>
+
+        <!--PokRegIDFK cell-->
+
+        <DataTemplate x:Key="PokRegIDFKCellTemplate">
+            <Grid Width="100">
+                <TextBlock Foreground="Red" FontSize="18"  HorizontalAlignment="Center" Text="{Binding PokRegIDFK}"/>
+            </Grid>
+        </DataTemplate>
+
     </Application.Resources>
 </Application>

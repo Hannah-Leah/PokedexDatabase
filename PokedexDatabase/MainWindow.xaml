@@ -5,48 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokedexDatabase"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="650" Width="850" ResizeMode="NoResize">
     <Grid>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
 
 
-        <ListView x:Name="ListData" ItemsSource="{Binding PokemonsObsv}" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListData_SelectionChanged" Margin="0,0,307,0" MouseDoubleClick="ListData_MouseDoubleClick">
+        <ListView Grid.Column="0" x:Name="ListData" ItemsSource="{Binding PokemonsObsv}" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListData_SelectionChanged" Margin="0,146,0,10" MouseDoubleClick="ListData_MouseDoubleClick" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding PokIDPK}" />
-                    <GridViewColumn Header="PokDexID" DisplayMemberBinding="{Binding PokDexID}"/>
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding PokName}"/>
-                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding PokDescription}"/>
-                    <GridViewColumn Header="Size" DisplayMemberBinding="{Binding PokSize}"/>
-                    <GridViewColumn Header="Weight" DisplayMemberBinding="{Binding PokWeight}"/>
-                    <GridViewColumn Header="RegIDFK" DisplayMemberBinding="{Binding PokRegIDFK}"/>
+                    <GridViewColumn HeaderTemplate="{StaticResource PurpleHeaderTemplate}" CellTemplate="{StaticResource IDCellTemplate}"  />
+                    <GridViewColumn HeaderTemplate="{StaticResource PinkHeaderTemplate}" CellTemplate="{StaticResource PokDexIDCellTemplate}" />
+                    <GridViewColumn HeaderTemplate="{StaticResource YellowHeaderTemplate}" CellTemplate="{StaticResource PokNameCellTemplate}"/>
+                    <GridViewColumn HeaderTemplate="{StaticResource BlueHeaderTemplate}" CellTemplate="{StaticResource PokDescriptionCellTemplate}"/>
+                    <GridViewColumn HeaderTemplate="{StaticResource GreenHeaderTemplate}" CellTemplate="{StaticResource PokSizeCellTemplate}"/>
+                    <GridViewColumn HeaderTemplate="{StaticResource OrangeHeaderTemplate}" CellTemplate="{StaticResource PokWeightCellTemplate}"/>
+                    <GridViewColumn HeaderTemplate="{StaticResource RedHeaderTemplate}" CellTemplate="{StaticResource PokRegIDFKCellTemplate}"/>
 
                 </GridView>
             </ListView.View>
 
         </ListView>
-        
+
         <!--Buttons-->
-        <Button x:Name="BtnCreate" Content="Create New" HorizontalAlignment="Left" Margin="596,359,0,0" VerticalAlignment="Top" Height="55" Width="151" Click="BtnCreate_Click" Background="#FFDBF4FC" FontWeight="Bold" FontFamily="Arial Nova Cond Light" FontSize="16" Cursor="Hand">
+        <Button BorderThickness="3" x:Name="BtnCreate" Content="" HorizontalAlignment="Left" Margin="224,41,0,0" VerticalAlignment="Top" Height="51" Width="151" Click="BtnCreate_Click" Background="#FFDBF4FC" FontWeight="Bold" FontFamily="Arial Nova Cond Light" FontSize="16" Cursor="Hand" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="596,295,0,0" VerticalAlignment="Top" Width="151" Height="51" Click="BtnRefresh_Click" Background="#FFFCFFEE" FontSize="16" FontWeight="Bold" FontFamily="Arial Nova Cond Light" Cursor="Hand">
+        <Button BorderThickness="3" x:Name="BtnRefresh" Content="" HorizontalAlignment="Left" Margin="23,41,0,0" VerticalAlignment="Top" Width="151" Height="51" Click="BtnRefresh_Click" Background="#FFFCFFEE" FontSize="16" FontWeight="Bold" FontFamily="Arial Nova Cond Light" Cursor="Hand" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnEdit" Content="Edit" HorizontalAlignment="Left" Margin="596,229,0,0" VerticalAlignment="Top" Width="151" Height="51" Click="BtnEdit_Click" Background="#FFE6FFE6" FontFamily="Arial Nova Cond Light" FontWeight="Bold" FontSize="16" Cursor="Hand">
+        <Button BorderThickness="3" x:Name="BtnEdit" Content="" HorizontalAlignment="Left" Margin="228,41,0,0" VerticalAlignment="Top" Width="152" Height="51" Click="BtnEdit_Click" Background="#FFE6FFE6" FontFamily="Arial Nova Cond Light" FontWeight="Bold" FontSize="16" Cursor="Hand">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="BtnDelete" Content="Delete" HorizontalAlignment="Left" Margin="596,166,0,0" VerticalAlignment="Top" Width="151" Height="51" Click="BtnDelete_Click" Background="#FFF7CECE" FontFamily="Arial Nova Cond Light" FontWeight="Bold" FontSize="16" Cursor="Hand">
+        <Button BorderThickness="3" x:Name="BtnDelete" Content="" HorizontalAlignment="Left" Margin="40,41,0,0" VerticalAlignment="Top" Width="151" Height="51" Click="BtnDelete_Click" Background="#FFF7CECE" FontFamily="Arial Nova Cond Light" FontWeight="Bold" FontSize="16" Cursor="Hand">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
+
+        <Image HorizontalAlignment="Left" Height="42" Margin="100,47,0,0" VerticalAlignment="Top" Width="35" Source="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"/>
+        <Image HorizontalAlignment="Left" Height="34" Margin="280,49,0,0" VerticalAlignment="Top" Width="57" Source="https://static.vecteezy.com/system/resources/previews/019/552/595/non_2x/sign-up-icon-signup-square-box-on-transparent-background-free-png.png"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="83,49,0,0" VerticalAlignment="Top" Width="32" Source="https://static-00.iconduck.com/assets.00/refresh-icon-2048x2048-8i52zgsv.png"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="281,46,0,0" VerticalAlignment="Top" Width="38" Source="https://cdn0.iconfinder.com/data/icons/outline-ui-2/120/Untitled-21-512.png"/>
 
 
 
