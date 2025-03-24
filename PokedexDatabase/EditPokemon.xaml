@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokedexDatabase"
         mc:Ignorable="d"
-        Title="EditPokemon" Height="450" Width="800" ResizeMode="NoResize">
+        Title="EditPokemon" Height="450" Width="800" ResizeMode="NoResize" Background="#e5e8d8">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="79*"/>
@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
         <!--Textboxes and labels-->
 
-        <Label Content="PokDexID" HorizontalAlignment="Left" Margin="120,41,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF761414" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="PokDexID" HorizontalAlignment="Left" Margin="120,41,0,0" VerticalAlignment="Top"  Foreground="#FF761414" FontWeight="Bold" FontStyle="Italic"/>
         <Label Content="PokName" HorizontalAlignment="Left" Margin="120,72,0,0" VerticalAlignment="Top" Foreground="#FF004C5C" FontWeight="Bold" FontStyle="Italic"/>
         <Label Content="PokDescription" HorizontalAlignment="Left" Margin="106,103,0,0" VerticalAlignment="Top" Foreground="#FF005812" FontWeight="Bold" FontStyle="Italic"/>
         <Label Content="PokSize" HorizontalAlignment="Left" Margin="125,134,0,0" VerticalAlignment="Top" Foreground="#FF615102" FontWeight="Bold" FontStyle="Italic"/>

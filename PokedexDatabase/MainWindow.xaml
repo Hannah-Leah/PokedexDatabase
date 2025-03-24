@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokedexDatabase"
         mc:Ignorable="d"
-        Title="MainWindow" Height="650" Width="850" ResizeMode="NoResize">
+        Title="MainWindow" Height="650" Width="850" ResizeMode="NoResize" Background="#fcebec">
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
 
 
-        <ListView Grid.Column="0" x:Name="ListData" ItemsSource="{Binding PokemonsObsv}" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListData_SelectionChanged" Margin="0,146,0,10" MouseDoubleClick="ListData_MouseDoubleClick" Grid.ColumnSpan="2" Grid.RowSpan="2">
+        <ListView Grid.Column="0" x:Name="ListData" ItemsSource="{Binding PokemonsObsv}" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListData_SelectionChanged" Margin="0,146,0,10" MouseDoubleClick="ListData_MouseDoubleClick" Grid.ColumnSpan="2" Grid.RowSpan="2" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn HeaderTemplate="{StaticResource PurpleHeaderTemplate}" CellTemplate="{StaticResource IDCellTemplate}"  />

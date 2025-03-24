@@ -7,8 +7,13 @@
         mc:Ignorable="d"
         Title="PokemonDetails" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="https://slidechef.net/wp-content/uploads/2024/01/Pikachu-Pokemon-Background.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        
         <!-- Existing ListView for Attacks -->
-        <ListView x:Name="AttackListView" HorizontalAlignment="Left" Height="274" VerticalAlignment="Top" Width="248" Margin="47,112,0,0">
+        <ListView x:Name="AttackListView" HorizontalAlignment="Left" Height="274" VerticalAlignment="Top" Width="248" Margin="47,112,0,0" Background="#fae7bb">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="AttackID" DisplayMemberBinding="{Binding AttackID}" />
@@ -19,7 +24,7 @@
         </ListView>
 
         <!-- New ListView for Types -->
-        <ListView x:Name="TypeListView" HorizontalAlignment="Left" Height="274" VerticalAlignment="Top" Width="140" Margin="340,112,0,0">
+        <ListView x:Name="TypeListView" HorizontalAlignment="Left" Height="274" VerticalAlignment="Top" Width="140" Margin="340,112,0,0" Background="#f7d78b">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="TypeID" DisplayMemberBinding="{Binding TypeIDPK}" />
@@ -29,12 +34,12 @@
         </ListView>
 
         <!-- Region ListView -->
-        <ListView x:Name="RegionListView" Margin="537,117,37,48" >
+        <ListView x:Name="RegionListView" Margin="537,117,37,48" Background="#faeccd" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="RegionID" DisplayMemberBinding="{Binding RegIDPK}" />
-                    <GridViewColumn Header="Region Name" DisplayMemberBinding="{Binding RegDesignation}" />
                     <GridViewColumn Header="Description" DisplayMemberBinding="{Binding RegDescription}" />
+                    <GridViewColumn Header="Region Name" DisplayMemberBinding="{Binding RegDesignation}" />
                 </GridView>
             </ListView.View>
         </ListView>
